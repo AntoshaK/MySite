@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица</title>
+</head>
+<body style="background-color: DarkKhaki">
+<h2><a href="main.html">Самые популярные сериалы</a></h2>
+<h1><a href="table.html">Список сериалов</a></h1>
+<details>
+    <summary>График</summary>
+    <form>
+        <table cellspacing="10">
+            <tr>
+                <td valign="top">
+
+                    <legend><strong>Значение по оси OХ</strong></legend>
+                    <input type="radio" name="ox" value="жанр">Жанр<br>
+                    <input type="radio" name="ox" value="рейтинг">Рейтинг
+                </td>
+                <td valign="top">
+                    <legend><strong>Результат</strong></legend>
+                    <input type="checkbox" name="result" value="макс">Максимальный рейтинг<br>
+                    <input type="checkbox" name="result" value="мин">Минимальный рейтинг<br>
+                    <input type="checkbox" name="result" value="колво">Количество сериалов
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="Построить">
+    </form>
+</details>
+<details>
+    <summary>Фильтр</summary>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    Название:
+                </td>
+                <td>
+                    <input type="text" id=name placeholder="Введите название">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Жанр:
+                </td>
+                <td>
+                    <input type="text" id=genre placeholder="Введите жанр">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Количество сезонов:
+                </td>
+                <td>
+                    <input type="number" min="1" id=amount placeholder="Введите количество сезонов">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Год (от):
+                </td>
+                <td>
+                    <input type="number" min="1920" max="2022" id=year1 placeholder="Введите год">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Год (до):
+                </td>
+                <td>
+                    <input type="number" min="1920" max="2022" id=year2 placeholder="Введите год">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Рейтинг (от):
+                </td>
+                <td>
+                    <input type="number" min="1" max="10" step="0.1" id=rate1 placeholder="Введите рейтинг">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Рейтинг (до):
+                </td>
+                <td>
+                    <input type="number" min="1" max="10" step="0.1" id=rate2 placeholder="Введите рейтинг">
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="Найти">
+    </form>
+</details>
+<details>
+    <summary>Сортировка</summary>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    Первый уровень:
+                </td>
+                <td>
+                    <select>
+                        <option value="0">
+                            Название
+                        </option>
+                        <option  value="1">
+                            Год выхода
+                        </option>
+                        <option value="2">
+                            Рейтинг в кинопоиске
+                        </option>
+                        <option value="3">
+                            Жанр
+                        </option>
+                        <option value="4">
+                            Количество сезонов
+                        </option>
+                    </select>
+                </td>
+                <td>
+                    по убыванию?
+                </td>
+                <td>
+                    <input type="checkbox" name="ack1" value="ack1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Второй уровень:
+                </td>
+                <td>
+                    <select>
+                        <option value="0">
+                            Название
+                        </option>
+                        <option  value="1">
+                            Год выхода
+                        </option>
+                        <option value="2">
+                            Рейтинг в кинопоиске
+                        </option>
+                        <option value="3">
+                            Жанр
+                        </option>
+                        <option value="4">
+                            Количество сезонов
+                        </option>
+                    </select>
+                </td>
+                <td>
+                    по убыванию?
+                </td>
+                <td>
+                    <input type="checkbox" name="ack2" value="ack2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Третий уровень:
+                </td>
+                <td>
+                    <select>
+                        <option value="0">
+                            Название
+                        </option>
+                        <option  value="1">
+                            Год выхода
+                        </option>
+                        <option value="2">
+                            Рейтинг в кинопоиске
+                        </option>
+                        <option value="3">
+                            Жанр
+                        </option>
+                        <option value="4">
+                            Количество сезонов
+                        </option>
+                    </select>
+                </td>
+                <td>
+                    по убыванию?
+                </td>
+                <td>
+                    <input type="checkbox" name="ack2" value="ack2">
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="Сортировать">
+    </form>
+</details>
+<table border="1" width="80%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>Название</td>
+        <td>Год выхода</td>
+        <td>Рейтинг на кинопоиске</td>
+        <td>Жанр</td>
+        <td>Количество сезонов</td>
+    </tr>
+    <tr>
+        <td>Постучись в мою дверь</td>
+        <td>2022</td>
+        <td>8.2</td>
+        <td>Мелодрама</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Клуб Винкс</td>
+        <td>2011</td>
+        <td>3.9</td>
+        <td>Мультсериал</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Во все тяжкие</td>
+        <td>2008</td>
+        <td>8.9</td>
+        <td>Драма</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Великолепный век</td>
+        <td>2011</td>
+        <td>8.2</td>
+        <td>Исторический</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Время приключений</td>
+        <td>2007</td>
+        <td>8.3</td>
+        <td>Мультсериал</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>Фарго</td>
+        <td>2014</td>
+        <td>8.4</td>
+        <td>Триллер</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Футурама</td>
+        <td>1999</td>
+        <td>8.2</td>
+        <td>Мультсериал</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Твин Пикс</td>
+        <td>1990</td>
+        <td>8.5</td>
+        <td>Фантастика</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Тьма</td>
+        <td>2017</td>
+        <td>8.1</td>
+        <td>Фантастика</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Клиника</td>
+        <td>2001</td>
+        <td>8.7</td>
+        <td>Комедия</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>Настоящий детектив</td>
+        <td>2014</td>
+        <td>8.7</td>
+        <td>Детектив</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Гранд отель</td>
+        <td>2011</td>
+        <td>8.1</td>
+        <td>Детектив</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Очень странные дела</td>
+        <td>2016</td>
+        <td>8.4</td>
+        <td>Ужасы</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Ведьмак</td>
+        <td>2019</td>
+        <td>7.3</td>
+        <td>Фентези</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Как я встретил вашу маму</td>
+        <td>2005</td>
+        <td>8.6</td>
+        <td>Комедия</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>Ход королевы</td>
+        <td>2020</td>
+        <td>8.3</td>
+        <td>Драма</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Игра в кальмара</td>
+        <td>2021</td>
+        <td>7.5</td>
+        <td>Драма</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Твин Пикс</td>
+        <td>1990</td>
+        <td>8.5</td>
+        <td>Фантастика</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Шерлок</td>
+        <td>2010</td>
+        <td>8.9</td>
+        <td>Детектив</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Восьмидесятые</td>
+        <td>2018</td>
+        <td>7.8</td>
+        <td>Комедия</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Счастливы вместе</td>
+        <td>2006</td>
+        <td>4.7</td>
+        <td>Комедия</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Однажды в сказке</td>
+        <td>2011</td>
+        <td>7.9</td>
+        <td>Мелодрама</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>Остаться в живых</td>
+        <td>2004</td>
+        <td>8.1</td>
+        <td>Приключения</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Бесстыжие</td>
+        <td>2011</td>
+        <td>8.7</td>
+        <td>Драма</td>
+        <td>11</td>
+    </tr>
+    <tr>
+        <td>Клиника</td>
+        <td>2001</td>
+        <td>8.7</td>
+        <td>Драма</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>Американская история ужасов</td>
+        <td>2011</td>
+        <td>7.9</td>
+        <td>Ужасы</td>
+        <td>13</td>
+    </tr>
+    <tr>
+        <td>Песочный человек</td>
+        <td>2020</td>
+        <td>7.1</td>
+        <td>Ужасы</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Последний из Магикян</td>
+        <td>2013</td>
+        <td>6.9</td>
+        <td>Комедия</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Черное зеркало</td>
+        <td>2011</td>
+        <td>8.5</td>
+        <td>Триллер</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Доктор Хаус</td>
+        <td>2004</td>
+        <td>8.8</td>
+        <td>Драма</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Кости</td>
+        <td>2005</td>
+        <td>8.0</td>
+        <td>Драма</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>Чернобыль</td>
+        <td>2018</td>
+        <td>8.8</td>
+        <td>Исторический</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Властелин колец: Кольца власти</td>
+        <td>2022</td>
+        <td>6.1</td>
+        <td>Боевик</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Великолепные Медичи</td>
+        <td>2018</td>
+        <td>8.2</td>
+        <td>Исторический</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Острые козырьки</td>
+        <td>2013</td>
+        <td>8.4</td>
+        <td>Драма</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Корона</td>
+        <td>2016</td>
+        <td>8.3</td>
+        <td>Драма</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Ходячие мертвецы</td>
+        <td>2010</td>
+        <td>8.0</td>
+        <td>Ужасы</td>
+        <td>11</td>
+    </tr>
+    <tr>
+        <td>Кухня</td>
+        <td>2012</td>
+        <td>8.2</td>
+        <td>Комедия</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Друзья</td>
+        <td>1994</td>
+        <td>9.2</td>
+        <td>Мелодрама</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>Игра престолов</td>
+        <td>2011</td>
+        <td>9.0</td>
+        <td>Фентези</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Семнадцать мгновений весны</td>
+        <td>1973</td>
+        <td>8.9</td>
+        <td>Драма</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Звёздный путь</td>
+        <td>1966</td>
+        <td>8.3</td>
+        <td>Фантастика</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Приключения Шерлока Холмса</td>
+        <td>1984</td>
+        <td>8.1</td>
+        <td>Детектив</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>В поисках капитана Гранта</td>
+        <td>1985</td>
+        <td>8.2</td>
+        <td>Приключения</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Санта-Барбара</td>
+        <td>1984</td>
+        <td>4.3</td>
+        <td>Мелодрама</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Ванпанчмен</td>
+        <td>2015</td>
+        <td>8.4</td>
+        <td>Мультфильм</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Вокруг света за 80 дней</td>
+        <td>2021</td>
+        <td>7.8</td>
+        <td>Приключения</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Конец ***го мира</td>
+        <td>2019</td>
+        <td>7.7</td>
+        <td>Приключения</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Монстр: история джеффри дамера</td>
+        <td>2022</td>
+        <td>7.4</td>
+        <td>Триллер</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Дивный новый мир</td>
+        <td>2019</td>
+        <td>7.3</td>
+        <td>Триллер</td>
+        <td>1</td>
+    </tr>
+</table>
+</body>
+</html>
